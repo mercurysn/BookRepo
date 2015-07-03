@@ -1,5 +1,7 @@
+using AutoMapper;
 using BookRepo.Data;
-using BookRepo.Data.Models;
+using BookRepo.Helpers.AutoMapper;
+using BookRepo.Helpers.File;
 
 namespace BookRepo.Migrations
 {
@@ -9,19 +11,26 @@ namespace BookRepo.Migrations
     {
         public Configuration()
         {
+            Mapper.Initialize(cfg => cfg.AddProfile(new BookMapperProfile()));
             AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(BookDb context)
         {
-            context.Books.AddOrUpdate(
-                b => b.Id,
-            new Book
+            CsvFileReader fileReader = new CsvFileReader();
+
+            fileReader.OpenFile();
+
+            fileReader.GetAllRecords();
+
+            var id = 2;
+
+            foreach (var book in fileReader.Books)
             {
-                Id = 1,
-                Author = "J. K. Rowling",
-                Name = "Harry Potter and the Goblet of Fire"
-            });
+                book.Id = id++;
+                context.Books.AddOrUpdate(
+                    b => b.Id, book);
+            }
         }
     }
 }
