@@ -10,5 +10,8 @@ namespace BookRepo.Data.Models
         public int Minutes { get; set; }
         public DateTime? DateStarted { get; set; }
         public DateTime? DateCompleted { get; set; }
+        public DateTime? ReleaseDate { get; set; }
+        public int Pages { get; set; }
+        public string CoverUrl { get; set; }
     }
 }

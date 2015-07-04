@@ -11,6 +11,9 @@ namespace BookRepo.Helpers.File
             Map(m => m.Time);
             Map(m => m.DateStarted);
             Map(m => m.DateEnded);
+            Map(m => m.Year);
+            Map(m => m.Pages);
+            Map(m => m.URL);
         }
     }
 }

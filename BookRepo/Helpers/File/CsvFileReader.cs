@@ -16,6 +16,11 @@ namespace BookRepo.Helpers.File
         {
             TextReader textReader = System.IO.File.OpenText(@"C:\Users\e053227\Source\Repos\BookRepo\BookRepo\Source\Books - Sheet1.csv");
             Reader = new CsvReader(textReader);
+            ConfigureCsvReader();
+        }
+
+        private void ConfigureCsvReader()
+        {
             Reader.Configuration.RegisterClassMap<FieldMapper>();
             Reader.Configuration.IgnoreHeaderWhiteSpace = true;
         }

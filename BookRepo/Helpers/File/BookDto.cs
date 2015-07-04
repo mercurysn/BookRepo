@@ -7,5 +7,8 @@
         public string Time { get; set; }
         public string DateStarted { get; set; }
         public string DateEnded { get; set; }
+        public string Year { get; set; }
+        public string Pages { get; set; }
+        public string URL { get; set; }
     }
 }

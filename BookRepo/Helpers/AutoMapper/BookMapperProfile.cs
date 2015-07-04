@@ -11,6 +11,7 @@ namespace BookRepo.Helpers.AutoMapper
         protected override void Configure()
         {
             DateTime dummyTime;
+            int dummyInt;
 
             CreateMap<BookDto, Book>()
                 .ForMember(dest => dest.Id, src => src.Ignore())
@@ -19,6 +20,9 @@ namespace BookRepo.Helpers.AutoMapper
                 .ForMember(dest => dest.Minutes, src => src.MapFrom(p => Convert.ToInt32(p.Time.ConvertTimeToMinutes())))
                 .ForMember(dest => dest.DateStarted, src => src.MapFrom(p => (DateTime.TryParse(p.DateStarted, out dummyTime) ? Convert.ToDateTime(p.DateStarted) : new DateTime(1900, 1, 1))))
                 .ForMember(dest => dest.DateCompleted, src => src.MapFrom(p => (DateTime.TryParse(p.DateEnded, out dummyTime) ? Convert.ToDateTime(p.DateEnded) : new DateTime(1900, 1, 1))))
+                .ForMember(dest => dest.ReleaseDate, src => src.MapFrom(p => (DateTime.TryParse(p.Year, out dummyTime) ? Convert.ToDateTime(p.Year) : new DateTime(1900, 1, 1))))
+                .ForMember(dest => dest.Pages, src => src.MapFrom(p => (Int32.TryParse(p.Pages, out dummyInt) ? Convert.ToInt32(p.Pages) : 0)))
+                .ForMember(dest => dest.CoverUrl, src => src.MapFrom(p => p.URL))
                 ;
             
             Mapper.AssertConfigurationIsValid();
