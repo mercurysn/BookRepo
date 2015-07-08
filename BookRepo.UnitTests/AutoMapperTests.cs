@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BookRepo.Data.Models;
 using BookRepo.Helpers.AutoMapper;
 using NUnit.Framework;
 
@@ -15,6 +16,30 @@ namespace BookRepo.UnitTests
             Mapper.AssertConfigurationIsValid();
         }
 
+        [Test]
+        public void Test_MapToViewModel_Profile_Config_Valid()
+        {
+            Mapper.Initialize(m => m.AddProfile(new MapToViewModelProfile()));
 
+            Mapper.AssertConfigurationIsValid();
+        }
+
+        [Test]
+        public void Test_MapToViewModel_Profile_TestMapping_Field()
+        {
+            Mapper.Initialize(m => m.AddProfile(new MapToViewModelProfile()));
+
+            Book bookModel = new Book
+            {
+                Name = "Book1"
+            };
+
+            Models.ViewModels.Book bookViewModel = new Models.ViewModels.Book();
+
+            Mapper.Map(bookModel, bookViewModel);
+
+            Assert.AreEqual(bookModel.Name, bookViewModel.Name);
+            Assert.AreEqual("Book1", bookViewModel.Name);
+        }
     }
 }

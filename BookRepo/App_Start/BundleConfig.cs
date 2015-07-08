@@ -28,6 +28,9 @@ namespace BookRepo
                       "~/Content/bootstrap.css",
                       "~/Content/custom-styles.css",
                       "~/Content/site.css",
+                      "~/Content/book-style-3d-1.css",
+                      "~/Content/book-style-3d-animation.css",
+                      "~/Content/book-style-3d-2.css",
                       "~/Content/font-awesome.css"));
         }
     }

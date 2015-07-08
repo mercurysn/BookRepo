@@ -1,12 +1,31 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
+@model List<BookRepo.Models.ViewModels.Book>
 
-<h1>My Book Library</h1>
+<h1>Book Library</h1>
 
-<div class="row">
-    <div class="col-md-4">4</div>
-    <div class="col-md-8">8</div>
+<div class="main-body">
+    @for (var i = 1; i < Model.Count; i++)
+    {
+        if (i == 1)
+        {
+            @Html.Raw("<div class=\"row\">")
+        }
+
+        <div class="col-md-2">
+            @Html.Partial("_LibBookItemView", Model[i -1])
+        </div>
+
+        if (i == Model.Count - 1)
+        {
+            @Html.Raw("</div>")
+        }
+
+        if (i%6 == 0 && i != 1)
+        {
+            @Html.Raw("</div><div class=\"row\">")
+        }
+    }
 </div>
 

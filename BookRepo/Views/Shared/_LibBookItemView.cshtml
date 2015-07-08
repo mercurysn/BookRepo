@@ -1,0 +1,6 @@
+﻿@model BookRepo.Models.ViewModels.Book
+
+<div class="lib-book-image-container">
+    <img src="@Model.CoverUrl" class="img-responsive lib-book-cover book3d1" alt="@Model.Name" />
+</div>
+@Html.Partial("_LibBookItemContentView", Model)

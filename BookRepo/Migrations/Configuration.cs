@@ -11,7 +11,7 @@ namespace BookRepo.Migrations
     {
         public Configuration()
         {
-            Mapper.Initialize(cfg => cfg.AddProfile(new BookMapperProfile()));
+            //Mapper.Initialize(cfg => cfg.AddProfile(new BookMapperProfile()));
             AutomaticMigrationsEnabled = true;
         }
 
