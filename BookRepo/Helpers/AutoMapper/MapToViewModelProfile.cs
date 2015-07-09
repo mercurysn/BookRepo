@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using BookRepo.Data.Models;
+using BookRepo.Helpers.ExtensionMethods;
 
 namespace BookRepo.Helpers.AutoMapper
 {
@@ -8,7 +9,7 @@ namespace BookRepo.Helpers.AutoMapper
         protected override void Configure()
         {
             CreateMap<Book, Models.ViewModels.Book>()
-                .ForMember(dest => dest.Id, src => src.MapFrom(p => p.Id))
+                .ForMember(dest => dest.RunningTime, src => src.MapFrom(p => p.Minutes.ToHourMinuteDisplay()))
                 ;
 
             Mapper.AssertConfigurationIsValid();

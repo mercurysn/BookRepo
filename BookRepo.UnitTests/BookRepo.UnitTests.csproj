@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="AutoMapperTests.cs" />
     <Compile Include="CsvFileReaderTests.cs" />
+    <Compile Include="ExtensionMethod\IntHelperTests.cs" />
     <Compile Include="ExtensionMethod\TimeHelperTests.cs" />
     <Compile Include="HtmlHelpersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

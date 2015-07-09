@@ -186,6 +186,7 @@
     </Compile>
     <Compile Include="Helpers\AutoMapper\BookMapperProfile.cs" />
     <Compile Include="Helpers\AutoMapper\MapToViewModelProfile.cs" />
+    <Compile Include="Helpers\ExtensionMethods\IntHelper.cs" />
     <Compile Include="Helpers\ExtensionMethods\TimeHelper.cs" />
     <Compile Include="Helpers\File\BookDto.cs" />
     <Compile Include="Helpers\File\CsvFileReader.cs" />

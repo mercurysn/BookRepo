@@ -31,7 +31,8 @@ namespace BookRepo.UnitTests
 
             Book bookModel = new Book
             {
-                Name = "Book1"
+                Name = "Book1",
+                Minutes = 320
             };
 
             Models.ViewModels.Book bookViewModel = new Models.ViewModels.Book();
@@ -40,6 +41,7 @@ namespace BookRepo.UnitTests
 
             Assert.AreEqual(bookModel.Name, bookViewModel.Name);
             Assert.AreEqual("Book1", bookViewModel.Name);
+            Assert.AreEqual("5h 20m", bookViewModel.RunningTime);
         }
     }
 }
