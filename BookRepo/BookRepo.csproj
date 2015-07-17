@@ -192,6 +192,7 @@
     <Compile Include="Helpers\File\CsvFileReader.cs" />
     <Compile Include="Helpers\File\FieldMapper.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\ImageConverter.cs" />
     <Compile Include="IocContainer.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
