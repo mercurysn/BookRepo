@@ -23,6 +23,7 @@ namespace BookRepo.Helpers.AutoMapper
                 .ForMember(dest => dest.ReleaseDate, src => src.MapFrom(p => (DateTime.TryParse(p.Year, out dummyTime) ? Convert.ToDateTime(p.Year) : new DateTime(1900, 1, 1))))
                 .ForMember(dest => dest.Pages, src => src.MapFrom(p => (Int32.TryParse(p.Pages, out dummyInt) ? Convert.ToInt32(p.Pages) : 0)))
                 .ForMember(dest => dest.CoverUrl, src => src.MapFrom(p => p.URL))
+                .ForMember(dest => dest.CoverHash, src => src.Ignore())
                 ;
             
             Mapper.AssertConfigurationIsValid();

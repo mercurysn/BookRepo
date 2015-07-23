@@ -16,15 +16,6 @@ namespace BookRepo.Clients
             _client = client;
         }
 
-        public IRestResponse Execute(string url, Method method)
-        {
-            RestRequest request = new RestRequest(url, method);
-
-            return _client.Execute(request);
-
-            //https://www.googleapis.com/books/v1/volumes/ItvZr-OV0DEC?key=AIzaSyDhHJkRg7Yv6Z4hpw0OGsuMUl_WIlWpj20
-        }
-
         public GoogleBook GetGoogleBookApiResult(string url, Method method)
         {
             RestRequest request = new RestRequest(url, method);

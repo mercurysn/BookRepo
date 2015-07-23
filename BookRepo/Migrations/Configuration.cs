@@ -1,5 +1,7 @@
 using AutoMapper;
 using BookRepo.Data;
+using BookRepo.Data.Models;
+using BookRepo.Helpers;
 using BookRepo.Helpers.AutoMapper;
 using BookRepo.Helpers.File;
 
@@ -28,9 +30,19 @@ namespace BookRepo.Migrations
             foreach (var book in fileReader.Books)
             {
                 book.Id = id++;
+
+                SetCoverHash(book);
+
                 context.Books.AddOrUpdate(
                     b => b.Id, book);
             }
+        }
+
+        private static void SetCoverHash(Book book)
+        {
+            ImageConverter converter = new ImageConverter();
+
+            book.CoverHash = converter.ConvertImageUrlToBase64(book.CoverUrl);
         }
     }
 }

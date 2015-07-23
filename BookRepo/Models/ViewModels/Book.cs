@@ -13,5 +13,6 @@ namespace BookRepo.Models.ViewModels
         public DateTime? ReleaseDate { get; set; }
         public int Pages { get; set; }
         public string CoverUrl { get; set; }
+        public string CoverHash { get; set; }
     }
 }

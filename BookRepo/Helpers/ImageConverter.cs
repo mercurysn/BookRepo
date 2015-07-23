@@ -9,6 +9,9 @@ namespace BookRepo.Helpers
     {
         public String ConvertImageUrlToBase64(String url)
         {
+            if (String.IsNullOrEmpty(url))
+                return "";
+
             StringBuilder sb = new StringBuilder();
 
             Byte[] _byte = GetImage(url);

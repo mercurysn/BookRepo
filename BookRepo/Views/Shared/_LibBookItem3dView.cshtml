@@ -2,7 +2,7 @@
 
 <div class="books-3d-2 lib-book-image-container-3d">
     <div class="book-3d-2 lib-book-cover">
-        <img src="@Model.CoverUrl" class="img-responsive" alt="@Model.Name" />
+        <img src="data:image/jpg;base64,@Model.CoverHash" class="img-responsive" alt="@Model.Name" />
     </div>
 </div>
 @Html.Partial("_LibBookItemContentView", Model)
