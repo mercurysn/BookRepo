@@ -228,6 +228,7 @@
     <Content Include="fonts\fontawesome-webfontba72.woff" />
     <Content Include="fonts\fontawesome-webfontd41d.eot" />
     <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="App_Data\PropertyImporter.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\custom-scripts.js" />
     <Content Include="Scripts\custom.js" />
@@ -293,7 +294,6 @@
     <Content Include="Views\Shared\_LibBookItemContentView.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
