@@ -29,15 +29,98 @@
 
 .dashboard-heading {
     font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+    font-weight: bolder;
+   white-space: nowrap;
+    -webkit-transform: translate(0,100%) rotate(-90deg);
+    -moz-transform: translate(0,100%) rotate(-90deg);
+    -ms-transform: translate(0,100%) rotate(-90deg);
+    -o-transform: translate(0,100%) rotate(-90deg);
+    transform: translate(0,100%) rotate(-90deg);
+}
+
+.dashboard-blue {
+    /*background-color: #7f81b1;*/
+    background-image:
+    linear-gradient(
+      to top right, 
+      #75AF96, #061539
+    );
+}
+
+.dashboard-blue .dashboard-heading{
+    color: whitesmoke;
+}
+
+.dashboard-blue .dashboard-content-highlighted{
+        color:#080b3b
+}
+
+.dashboard-blue .dashboard-content-normal {
+    color:#191c59
+}
+
+.dashboard-green {
+    /*background-color: #277553*/
+    background-image:
+    linear-gradient(
+      to top right, 
+      #76b295, #003A21
+    );
+}
+
+.dashboard-green .dashboard-heading{
+    color: whitesmoke;
+}
+
+.dashboard-green .dashboard-content-highlighted{
+        color:#003a21
+}
+
+.dashboard-green .dashboard-content-normal {
+    color:#0f5738
+}
+
+.dashboard-heading-container {
+     width: 0;
+  display: inline-block;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 3px;
+  top: 180px;
+  width: 16px;
+}
+
+.dashboard-content {
+    vertical-align: text-bottom;
+    margin-top: 15%
+}
+
+.dashboard-content-highlighted {
+    font-family: 'Oswald', sans-serif;
     font-size: 3em;
     font-weight: bolder;
-    vertical-align: bottom;
-    width: 50px;
-    height: 510px;
+}
+
+.dashboard-content-normal {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 .dashboard-container {
-    background-color: #5f9ea0;
+    margin: 2em;
+}
+
+.dashboard-image-container {
+    padding-bottom: 2em;
+    padding-top: 2em;
+    height: 26em;
+}
+
+.dashboard-image-container img {
+    height: 22em;
 }
 
 .rotate {
@@ -57,3 +140,6 @@
   /* Should be unset in IE9+ I think. */
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
+
+
+

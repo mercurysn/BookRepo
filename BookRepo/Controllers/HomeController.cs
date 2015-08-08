@@ -1,13 +1,30 @@
 ﻿using System.Web.Mvc;
+using AutoMapper;
+using BookRepo.Data.Repository;
+using BookRepo.Models.ViewModels;
 
 namespace BookRepo.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BookRespository _bookRespository;
+
+        public HomeController(BookRespository bookRespository)
+        {
+            _bookRespository = bookRespository;
+            
+
+        }
+
         public ActionResult Index()
         {
-            
-            return View();
+            Dashboard dashboard = new Dashboard
+            {
+                FastestBook = Mapper.Map<Book>(_bookRespository.GetLongestBook()) ,
+                MostRecentBook = Mapper.Map<Book>(_bookRespository.GetMostRecentBook())
+            };
+             
+            return View(dashboard);
         }
 
         public ActionResult About()

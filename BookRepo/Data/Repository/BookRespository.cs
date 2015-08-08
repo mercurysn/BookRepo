@@ -13,5 +13,21 @@ namespace BookRepo.Data.Repository
                return (from book in context.Books select book).ToList();
             }
         }
+
+        public Book GetLongestBook()
+        {
+            using (var context = new BookDb())
+            {
+                return context.Books.OrderByDescending(b => b.Minutes).First();
+            }
+        }
+
+        public Book GetMostRecentBook()
+        {
+            using (var context = new BookDb())
+            {
+                return context.Books.OrderByDescending(b => b.DateCompleted).First();
+            }
+        }
     }
 }
