@@ -27,5 +27,14 @@
         @Scripts.Render("~/bundles/scripts")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
+        
+        <script language="javascript" type="text/javascript">
+
+
+    $(document).ready(function () {
+        $('.jquery-dataTable').dataTable();
+    });
+
+        </script>
     </body>
 </html>

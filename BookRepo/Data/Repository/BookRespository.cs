@@ -53,5 +53,13 @@ namespace BookRepo.Data.Repository
                 return context.Books.OrderByDescending(b => b.Minutes / (DbFunctions.DiffDays(b.DateCompleted, b.DateStarted == b.DateCompleted ? DbFunctions.AddDays(b.DateStarted, 1) : b.DateStarted))).First();
             }
         }
+
+        public List<Book> GetLastReadBooks()
+        {
+            using (var context = new BookDb())
+            {
+                return context.Books.OrderByDescending(b => b.DateCompleted).Take(5).ToList();
+            }
+        }
     }
 }

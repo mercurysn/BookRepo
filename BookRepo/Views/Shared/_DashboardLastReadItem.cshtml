@@ -1,0 +1,16 @@
+﻿@model BookRepo.Models.ViewModels.Dashboard
+
+@foreach (var book in @Model.LastBooks)
+{
+    <a href="#" class="list-group-item">
+        <div style="height:100%;">
+            <img style="height:50px;" class="img-responsive" src="data:image/jpg;base64,@book.CoverHash" />
+            <i class="fa fa-fw fa-book"></i>
+            @book.Name
+        </div>
+        <div>
+            <span class="badge">@(DateTime.Now.Subtract((DateTime)book.DateCompleted).Days) days ago</span>
+        </div>
+    </a>
+
+}

@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using AutoMapper;
-using BookRepo.Data.Dtos;
 using BookRepo.Data.Repository;
 using BookRepo.Models.ViewModels;
 
@@ -24,7 +24,8 @@ namespace BookRepo.Controllers
                 FastestBook = Mapper.Map<Book>(_bookRespository.GetFastestBook()) ,
                 LongestBook = Mapper.Map<Book>(_bookRespository.GetLongestBook()) ,
                 MostRecentBook = Mapper.Map<Book>(_bookRespository.GetMostRecentBook()),
-                DashboardSummary = Mapper.Map<DashboardSummary>(_bookRespository.GetDashboardDto())
+                DashboardSummary = Mapper.Map<DashboardSummary>(_bookRespository.GetDashboardDto()),
+                LastBooks = Mapper.Map<List<Book>>(_bookRespository.GetLastReadBooks())
             };
              
             return View(dashboard);

@@ -182,6 +182,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibraryController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\StatsController.cs" />
     <Compile Include="Data\BookDb.cs" />
     <Compile Include="Data\Dtos\DashboardDto.cs" />
     <Compile Include="Data\Models\Book.cs" />
@@ -209,7 +210,6 @@
     <Compile Include="Models\ViewModels\DashboardSummary.cs" />
     <Compile Include="NinjectDependecyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DashboardSummaryCompiler.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -295,9 +295,12 @@
     <Content Include="Views\Shared\_LibBookItem3dView.cshtml" />
     <Content Include="Views\Shared\_LibBookItemView.cshtml" />
     <Content Include="Views\Shared\_LibBookItemContentView.cshtml" />
+    <Content Include="Views\Shared\_DashboardLastReadItem.cshtml" />
+    <Content Include="Views\Stats\Month.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -6,6 +6,20 @@
             <li>
                 @Html.ActionLinkWithIcon("Book Library", "Index", "Library", "fa fa-book fa-fw")
             </li>
+            <li>
+                <a href="#"><i class="fa fa-sitemap"></i>Stats<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        @Html.ActionLink("Year", "Year", "Stats")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Month", "Month", "Stats")
+                    </li>
+                    <li>
+                        @Html.ActionLink("Book", "Book", "Stats")
+                    </li>
+                </ul>
+            </li>
             @*<li>
                     <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
                 </li>

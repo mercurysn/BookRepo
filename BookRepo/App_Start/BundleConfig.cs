@@ -10,9 +10,11 @@ namespace BookRepo
             bundles.Add(new ScriptBundle("~/bundles/scripts").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.validate*",
-                        "~/Scripts/custom-scripts.js",
-                        "~/Scripts/custom.js",
-                        "~/Scripts/jquery.metisMenu.js"));
+                        //"~/Scripts/custom-scripts.js",
+                        //"~/Scripts/custom.js",
+                        "~/Scripts/jquery.metisMenu.js",
+                        "~/Scripts/dataTables/jquery.dataTables.js",
+                        "~/Scripts/dataTables/dataTables.bootstrap.js"));
 
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -31,7 +33,8 @@ namespace BookRepo
                       "~/Content/book-style-3d-1.css",
                       "~/Content/book-style-3d-animation.css",
                       "~/Content/book-style-3d-2.css",
-                      "~/Content/font-awesome.css"));
+                      "~/Content/font-awesome.css",
+                      "~/Scripts/dataTables/dataTables.bootstrap.css"));
         }
     }
 }
