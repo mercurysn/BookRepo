@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using AutoMapper;
+using BookRepo.Data.Dtos;
 using BookRepo.Data.Repository;
 using BookRepo.Models.ViewModels;
 
@@ -20,8 +21,10 @@ namespace BookRepo.Controllers
         {
             Dashboard dashboard = new Dashboard
             {
-                FastestBook = Mapper.Map<Book>(_bookRespository.GetLongestBook()) ,
-                MostRecentBook = Mapper.Map<Book>(_bookRespository.GetMostRecentBook())
+                FastestBook = Mapper.Map<Book>(_bookRespository.GetFastestBook()) ,
+                LongestBook = Mapper.Map<Book>(_bookRespository.GetLongestBook()) ,
+                MostRecentBook = Mapper.Map<Book>(_bookRespository.GetMostRecentBook()),
+                DashboardSummary = Mapper.Map<DashboardSummary>(_bookRespository.GetDashboardDto())
             };
              
             return View(dashboard);

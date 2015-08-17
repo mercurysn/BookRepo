@@ -6,5 +6,7 @@ namespace BookRepo.Data.Repository
     public interface IBookRespository
     {
         List<Book> GetBooks();
+        Book GetFastestBook();
+
     }
 }
