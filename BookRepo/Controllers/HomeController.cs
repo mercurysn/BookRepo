@@ -13,8 +13,6 @@ namespace BookRepo.Controllers
         public HomeController(BookRespository bookRespository)
         {
             _bookRespository = bookRespository;
-            
-
         }
 
         public ActionResult Index()
