@@ -4,12 +4,15 @@ namespace BookRepo.Models.ViewModels
 {
     public class MonthStatsViewModel
     {
-        public List<MonthByMonthItem> MonthByMonthList { get; set; }
+        public List<BookGroup> MonthByMonthList { get; set; }
+        public List<BookGroup> MonthList { get; set; }
     }
 
-    public class MonthByMonthItem
+    
+
+    public class BookGroup
     {
-        public string Month { get; set; }
+        public string GroupName { get; set; }
         public int Rank { get; set; }
         public int TotalBooks { get; set; }
         public int TotalPages { get; set; }

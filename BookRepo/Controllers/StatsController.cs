@@ -21,10 +21,26 @@ namespace BookRepo.Controllers
         {
             MonthStatsViewModel viewModel = new MonthStatsViewModel
             {
-                MonthByMonthList = StatsMonthMapper.MapBookListToMonthByMonthList(Mapper.Map<List<Book>>(_bookRespository.GetBooks()))
+                MonthByMonthList = StatsMapper.MapBookListToMonthByMonthList(Mapper.Map<List<Book>>(_bookRespository.GetBooks())),
+                MonthList = StatsMapper.MapBookListToMonthList(Mapper.Map<List<Book>>(_bookRespository.GetBooks()))
             };
 
             return View(viewModel);
+        }
+
+        public ActionResult Year()
+        {
+            YearStatsViewModel viewModel = new YearStatsViewModel
+            {
+                YearByYearList = StatsMapper.MapBookListToYearList(Mapper.Map<List<Book>>(_bookRespository.GetBooks()))
+            };
+
+            return View(viewModel);
+        }
+
+        public ActionResult Book()
+        {
+            return View(Mapper.Map<List<Book>>(_bookRespository.GetBooks()));
         }
     }
 }
